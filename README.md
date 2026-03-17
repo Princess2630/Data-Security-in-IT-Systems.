@@ -43,7 +43,7 @@ This repository documents my technical journey through the MSc Cybersecurity pro
 ### **Phase 1: Defensive Hardening**
 | Step 1: Service Verification | Step 2: Systemctl Monitoring |
 | :---: | :---: |
-| <img src="./images/lab2_1.png" width="400"> | <img src="./images/lab2_1_status.png" width="400"> |
+| <img src="./images/lab2_1.png" width="400"> | <img src="./images/lab2_1.png" width="400"> |
 | *Verifying SSHGuard is active* | *Checking iptables integration* |
 
 ### **Phase 2: Attack Simulation**
@@ -61,3 +61,20 @@ This repository documents my technical journey through the MSc Cybersecurity pro
 **Conclusion:** The lab confirmed that combining real-time log analysis with automated firewall updates successfully neutralizes high-frequency brute-force attacks without impacting system performance.
 
 </details>
+
+---
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" width="100%">
+</p>
+
+<p align="center">
+  <b>  Stay tuned! More labs on Cloud Security are on the way.</b><br>
+  <i>Current Status: MSc Cybersecurity Candidate | Actively Building & Documenting</i>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Princess2630">
+    <img src="https://img.shields.io/badge/Follow-Princess2630-blue?style=for-the-badge&logo=github" alt="Follow on GitHub">
+  </a>
+</p>
