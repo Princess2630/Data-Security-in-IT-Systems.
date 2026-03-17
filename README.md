@@ -1,7 +1,6 @@
-# Data Security in IT Systems - Lab Portfolio 
+# Data Security in IT Systems - Labs Portfolio 
 
-This repository documents my technical journey through the MSc Cybersecurity program. Each project is contained within a collapsible section—click **"View Project Details"** to see the full technical walkthrough.
-----
+This repository documents my technical journey through the MSc Cybersecurity program.
 
 ##  Lab 01: Social Engineering Attack Lifecycle
 *Focus: Malware Development, Phishing, and Remote Access*
