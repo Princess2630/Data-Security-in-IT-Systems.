@@ -69,8 +69,8 @@ This repository documents my technical journey through the MSc Cybersecurity pro
 </p>
 
 <p align="center">
-  <b>  Stay tuned! More labs on Cloud Security are on the way.</b><br>
-  <i>Current Status: MSc Cybersecurity Candidate | Actively Building & Documenting</i>
+  <b>  Stay tuned! More labs on Data Security are on the way.</b><br>
+  <i>Current Status: MSc Cybersecurity Student | Actively Building & Documenting</i>
 </p>
 
 <p align="center">
