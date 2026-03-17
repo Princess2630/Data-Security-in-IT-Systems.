@@ -1,6 +1,6 @@
 # Data Security in IT Systems - Lab Portfolio 🔒
 
-This repository documents my technical journey through the MSc Cybersecurity program. Each project is contained within a collapsible section—click **"View Project Details"** to see the full technical walkthrough and screenshots.
+This repository documents my technical journey through the MSc Cybersecurity program. Each project is contained within a collapsible section—click **"View Project Details"** to see the full technical walkthrough.
 
 ---
 
@@ -8,41 +8,43 @@ This repository documents my technical journey through the MSc Cybersecurity pro
 *Focus: Malware Development, Phishing, and Remote Access*
 
 <details>
-<summary><b>📂 Click to View Project Details & Screenshots</b></summary>
+<summary><b>📂 View Project Details & Screenshots</b></summary>
 
 ### **Technical Walkthrough**
 
-**1. [cite_start]Weaponization & Payload Prep** Edited the `main.cpp` source file [cite: 1, 3] [cite_start]and generated a reverse TCP shellcode using `msfvenom`[cite: 5, 6]. [cite_start]This demonstrated how attackers embed malicious code into legitimate-looking programs[cite: 4].
+**1. Weaponization & Payload Prep** I edited the `main.cpp` source file in a Kali Linux environment and used `msfvenom` to generate a reverse TCP shellcode. This shellcode was embedded directly into the C++ character buffer.
 ![Payload Prep](./images/lab1_1.png)
 
-**2. [cite_start]Delivery Mechanism** Compiled the payload into `update.exe` [cite: 14] [cite_start]and hosted it via a Python HTTP server[cite: 15]. [cite_start]I then crafted a phishing email and a fake Roundcube login page [cite: 22, 26] [cite_start]to trick the target into downloading the "update"[cite: 27].
-![Phishing Email](./images/lab1_7.png)
+**2. Delivery & Phishing Execution** After compiling the code into `update.exe`, I hosted it on a Python HTTP server. I crafted a targeted phishing email and a fake Roundcube webmail login page to trick the user into downloading and running the file.
+![Phishing Setup](./images/lab1_7.png)
 
-**3. [cite_start]Exploitation & Remote Shell** Once the user executed the file on the Windows target [cite: 37, 38][cite_start], my Metasploit listener received a reverse connection [cite: 31][cite_start], granting full CLI access to the system[cite: 32].
-![Reverse Shell Success](./images/lab1_9.png)
+**3. Exploitation & Remote Shell** With the Metasploit `multi/handler` active, the moment the user executed the file on the Windows target, a reverse connection was established. I successfully gained full command-line access to the target system.
+![Remote Access](./images/lab1_9.png)
 
-> [cite_start]**Key Learning:** This lab emphasizes that social engineering exploits human trust rather than just technical flaws[cite: 42].
+**Key Takeaway:** This lab demonstrates how attackers combine technical tools with psychological deception to bypass traditional security perimeters.
 
 </details>
 
 ---
 
-## 🧪 Lab 02: Data Integrity & Digital Signatures
-*Focus: Hashing Algorithms (MD5/SHA-256) and RSA Signing*
+## 🧪 Lab 02: Linux Hardening & SSH Brute-Force Mitigation
+*Focus: Intrusion Prevention, SSHGuard, and System Monitoring*
 
 <details>
-<summary><b>📂 Click to View Project Details & Screenshots</b></summary>
+<summary><b>📂 View Project Details & Screenshots</b></summary>
 
 ### **Technical Walkthrough**
 
-**1. Hashing for Integrity** Generated MD5 and SHA-256 hashes of a source file to establish a digital fingerprint.
-![Hash Generation](./images/lab2_1.png)
+**1. Securing the SSH Service** I deployed **SSHGuard** on an Ubuntu Server to monitor authentication logs. This service is designed to automatically detect and block IP addresses that exhibit suspicious brute-force behavior.
+![Service Status](./images/lab2_1.png)
 
-**2. Detecting Unauthorized Changes** Modified the file content and re-verified the hash. The mismatched results proved that the file's integrity had been compromised.
-![Hash Mismatch](./images/lab2_2.png)
+**2. Attack Simulation** Using a Python script in Kali Linux, I generated repeated, rapid-fire network requests to simulate an automated brute-force attack against the server's SSH port.
+![Attack Script](./images/lab2_2.png)
 
-**3. Digital Signatures** Utilized a Private Key to sign the file hash and a Public Key to verify it, ensuring authenticity and non-repudiation.
-![Verification Success](./images/lab2_3.png)
+**3. Automated Mitigation** The system detected the abnormal traffic patterns in real-time. **SSHGuard** triggered `iptables` rules to drop all traffic from the attacker's IP, effectively neutralizing the threat while maintaining system stability.
+![Mitigation Active](./images/lab2_3.png)
+
+**Key Takeaway:** Proactive host-based intrusion prevention (HIPS) is critical for protecting exposed services from automated credential-stuffing attacks.
 
 </details>
 
