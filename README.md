@@ -1,54 +1,74 @@
-# Data Security in IT Systems - Lab Portfolio 🔒
+# Data Security in IT Systems - Lab Portfolio 
 
 This repository documents my technical journey through the MSc Cybersecurity program. Each project is contained within a collapsible section—click **"View Project Details"** to see the full technical walkthrough.
+----
 
----
-
-## 🧪 Lab 01: Social Engineering Attack Lifecycle
+##  Lab 01: Social Engineering Attack Lifecycle
 *Focus: Malware Development, Phishing, and Remote Access*
 
 <details>
-<summary><b>📂 View Project Details & Screenshots</b></summary>
+<summary><b>📂 View Full Technical Walkthrough (9+ Screenshots)</b></summary>
 
-### **Technical Walkthrough**
+### **Phase 1: Weaponization & Coding**
+**1. Source Code Prep:** Editing `main.cpp` in Kali Linux to prepare the malicious character buffer.
+![Step 1](./images/lab1_1.png)
 
-**1. Weaponization & Payload Prep** I edited the `main.cpp` source file in a Kali Linux environment and used `msfvenom` to generate a reverse TCP shellcode. This shellcode was embedded directly into the C++ character buffer.
-![Payload Prep](./images/lab1_1.png)
+**2. Shellcode Generation:** Using `msfvenom` to generate the reverse TCP payload.
+![Step 2](./images/lab1_2.png)
 
-**2. Delivery & Phishing Execution** After compiling the code into `update.exe`, I hosted it on a Python HTTP server. I crafted a targeted phishing email and a fake Roundcube webmail login page to trick the user into downloading and running the file.
-![Phishing Setup](./images/lab1_7.png)
+**3. Embedding:** Pasting the hex shellcode into the C++ source before compilation.
+![Step 3](./images/lab1_3.png)
 
-**3. Exploitation & Remote Shell** With the Metasploit `multi/handler` active, the moment the user executed the file on the Windows target, a reverse connection was established. I successfully gained full command-line access to the target system.
-![Remote Access](./images/lab1_9.png)
+### **Phase 2: Delivery & Social Engineering**
+**4. Compilation & Hosting:** Compiling the exploit into `update.exe` and launching a Python HTTP server to host the file.
+![Step 4](./images/lab1_4.png)
 
-**Key Takeaway:** This lab demonstrates how attackers combine technical tools with psychological deception to bypass traditional security perimeters.
+**5. Fake Login Portal:** Setting up the Roundcube webmail clone to capture user interest.
+![Step 5](./images/lab1_5.png)
+
+**6. The Phishing Email:** Crafting the deceptive message to trigger the download.
+![Step 6](./images/lab1_9.png)
+
+### **Phase 3: Exploitation & Control**
+**7. Listener Configuration:** Setting up the Metasploit `multi/handler` to wait for the callback.
+![Step 7](./images/lab1_7.png)
+
+**8. Target Execution:** The moment the user runs the "update" on the Windows machine.
+![Step 8](./images/lab1_10.png)
+
+**9. Remote Access Granted:** Success! Full command-line access established via the reverse shell.
+![Step 9](./images/lab1_8.png)
 
 </details>
 
 ---
 
-## 🧪 Lab 02: Linux Hardening & SSH Brute-Force Mitigation
-*Focus: Intrusion Prevention, SSHGuard, and System Monitoring*
+##  Lab 02: Host-Based Intrusion Prevention (SSHGuard)
+*Focus: Brute-Force Mitigation and Linux Hardening*
 
 <details>
-<summary><b>📂 View Project Details & Screenshots</b></summary>
+<summary><b>📂 View Full Technical Walkthrough (12+ Screenshots)</b></summary>
 
-### **Technical Walkthrough**
+### **Phase 1: Defensive Setup**
+**1. Service Verification:** Confirming **SSHGuard** is active and integrated with `iptables` on the Ubuntu Server.
+![Step 1](./images/lab2_1.png)
 
-**1. Securing the SSH Service** I deployed **SSHGuard** on an Ubuntu Server to monitor authentication logs. This service is designed to automatically detect and block IP addresses that exhibit suspicious brute-force behavior.
-![Service Status](./images/lab2_1.png)
+### **Phase 2: Attack Simulation**
+**2. Automated Brute-Force:** Running a Python script from Kali Linux to hammer the SSH port with connection attempts.
+![Step 2](./images/lab2_2.png)
 
-**2. Attack Simulation** Using a Python script in Kali Linux, I generated repeated, rapid-fire network requests to simulate an automated brute-force attack against the server's SSH port.
-![Attack Script](./images/lab2_2.png)
+**3. Real-Time Detection:** Monitoring the server logs as SSHGuard identifies the rapid-fire authentication failures.
+![Step 3](./images/lab2_3.png)
 
-**3. Automated Mitigation** The system detected the abnormal traffic patterns in real-time. **SSHGuard** triggered `iptables` rules to drop all traffic from the attacker's IP, effectively neutralizing the threat while maintaining system stability.
-![Mitigation Active](./images/lab2_3.png)
+### **Phase 3: Mitigation & Monitoring**
+**4. Blocking the Attacker:** Viewing the `iptables` rules automatically generated to drop the attacker's IP.
+![Step 4](./images/lab2_10.png)
 
-**Key Takeaway:** Proactive host-based intrusion prevention (HIPS) is critical for protecting exposed services from automated credential-stuffing attacks.
+**5. System Stability:** Monitoring CPU and resource usage to ensure the server remains stable under attack.
+![Step 5](./images/lab2_11.png)
+
+**6. Correlation:** Analyzing the logs to correlate the attack timestamps with the defensive actions taken.
+![Step 6](./images/lab2_12.png)
 
 </details>
-
----
-
-## 🧪 Lab 03: [Upcoming Lab]
 *Future documentation for Cloud Security or IoT Labs.*
