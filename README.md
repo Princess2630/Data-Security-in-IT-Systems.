@@ -19,7 +19,7 @@ This repository documents my technical journey through the MSc Cybersecurity pro
 ### **Phase 2: Delivery & Phishing**
 | Step 4: G++ Compilation | Step 5: Python HTTP Server | Step 6: Roundcube Webmail Setup |
 | :---: | :---: | :---: |
-| <img src="./images/lab1_4.png" width="250"> | <img src="./images/lab1_4_server.png" width="250"> | <img src="./images/lab1_5.png" width="250"> |
+| <img src="./images/lab1_4.png" width="250"> | <img src="./images/lab1_4.png" width="250"> | <img src="./images/lab1_5.png" width="250"> |
 | *Creating update.exe* | *Hosting the delivery vector* | *Fake login portal creation* |
 
 ### **Phase 3: Exploitation**
